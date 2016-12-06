@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ch">
+	<head>
+		<title>demo</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="content-script-type" content="text/javascript">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+		<meta http-equiv="expires" content="0">
+		<meta name="keywords" content="demo" />
+		<meta name="description" content="demo" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta http-equiv="Expires" content="-1" />
+		<meta http-equiv="pragram" content="no-cache" />
+		<!-- <link type="text/css" href="css/animation.css" rel="stylesheet" /> -->
+		<link type="text/css" href="css/main.css" rel="stylesheet" />		<link type="text/css" href="css/frames.css" rel="stylesheet" />
+		<!-- <link type="text/css" href="css/page.css" rel="stylesheet" /> -->
+		<!-- <link type="text/css" href="css/publish.css" rel="stylesheet" /> -->
+		<script>
+			if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+				var version = parseFloat(RegExp.$1);
+				if (version > 2.3) {
+					var phoneScale = parseInt(window.screen.width) / 640;
+					document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+				} else {
+					document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+				}
+			} else {
+				document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+			}
+			//微信去掉下方刷新栏
+			if (navigator.userAgent.indexOf('MicroMessenger') >= 0) {
+				document.addEventListener('WeixinJSBridgeReady', function() {
+					WeixinJSBridge.call('hideToolbar');
+				});
+			}
+		</script>
+	</head>
+	<body class="main">
+		<section class="container">
+			<!--first-->
+			<nav class="nav" id="nav">
+				<ul>
+					<li class="active"> <a href="javascript:;" data-index="1">策划</a></li>
+					<li> <a href="javascript:;" data-index="2">设计</a></li>
+					<li> <a href="javascript:;" data-index="3">文案</a></li>
+					<li> <a href="javascript:;" data-index="4">程序</a></li>
+					<li> <a href="javascript:;" data-index="5">执行</a></li>
+				</ul>
+			</nav>
+
+			<section class="page page-link z-current" data-plugin-type="info_front" style="background-image:url(img/img1.jpg);">
+				<section class="page-content">
+				
+					<!--<div class="m-animationBox m-animationCloudBg"></div>-->
+				</section>
+			</section>
+			
+			<section class="page page-link" data-plugin-type="info_link"  style="background-image:url(img/img2.jpg);">
+				<section class="page-content">
+				
+				</section>
+			</section>
+		
+			<section class="page page-link" data-plugin-type="info_link"  style="background-image:url(img/img3.jpg);">
+				<section class="page-content">
+					
+				</section>
+			</section>
+			
+		</section>
+	
+		<!--audio-->
+		<a href="javascript:;" class="u-globalAudio">
+				<i class="icon-music"></i>
+			<audio src="music.mp3"  autoplay="autoplay" loop="loop"></audio>
+		</a>
+		<!--audio end-->
+		<div  id="Loading" class="loading"></div>
+	
+		<script type="text/javascript" src="scripts/seajs/sea.js"></script>
+		<script type="text/javascript">
+			seajs.config({});
+			seajs.use('page/main');
+		</script>
+	</body>
+</html>
